@@ -3,7 +3,125 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<script src="script.js">
 		<title>Spaceship Control Panel</title>
+		<style>
+			body {
+				margin: 0;
+				font-family: Arial, sans-serif;
+				background-color: #f0f0f0;
+			}
+			.GorenBar {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				background-color: #2c3e50;
+				color: #ecf0f1;
+				padding: 10px 20px;
+				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+				height: 50px;
+			}
+			.logotext_nagorniqbar {
+				font-size: 1.8em;
+				font-weight: bold;
+				letter-spacing: 1px;
+				color: #3498db;
+				text-decoration: none;
+			}
+			.obrushtanenaezik {
+				display: flex;
+				align-items: center;
+			}
+			.obrushtanenaezik_link {
+				padding: 5px 10px;
+				margin-left: 10px;
+				text-decoration: none;
+				color: #bdc3c7;
+				text-align: center;
+				border-radius: 4px;
+				transition: background-color 0.4s ease, color 0.4s ease, transform 0.2s ease; 
+				font-weight: 600;
+			}
+			.obrushtanenaezik_link--active {
+				background-color: #3498db;
+				color: #ffffff;
+				font-weight: bold;
+				transform: scale(1.05);
+				box-shadow: 0 0 10px rgba(52, 152, 219, 0.6);
+			}
+			.obrushtanenaezik_link:not(.lang-switcher__link--active):hover {
+				background-color: #3e526a;
+				color: #ffffff;
+				transform: translateY(-1px);
+			}
+			img.twemoji {
+			  height: 1em;
+			  width: auto;
+			  vertical-align: -0.12em;
+			  display: inline-block;
+			}
+		</style>
 	</head>
+	<body>
+		<header class="GorenBar">
+			<a class="logotext_nagorniqbar">Spaceship Control Panel</a>
+			
+			<nav class="obrushtanenaezik" id="obrushtanenaezik-id">
+				<a href="#" class="obrushtanenaezik_link obrushtanenaezik_link--active" data-lang="bg">🇧🇬 BG</a>
+				<a href="#" class="obrushtanenaezik_link obrushtanenaezik_link--active" data-lang="en">🇬🇧 EN</a>
+			</nav>
+		</header>
+		
+		<script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js"></script>
+		<script>
+			twemoji.parse(document.body, {
+			  folder: 'svg',
+			  ext: '.svg'
+			});
+			//Prevodi
+			const translations = {
+				'en': {
+					//"test": "test"
+				},
+				'bg': {
+					//"test": "тест"
+				}
+			};
+			function setLanguage(lang) {
+				const translationSet = translations[lang];
+
+				if (!translationSet) {
+					console.error(`No translations found for language: ${lang}`);
+					return;
+				}
+
+				document.querySelectorAll('[data-key]').forEach(element => {
+					const key = element.getAttribute('data-key');
+					if (translationSet[key]) {
+						element.textContent = translationSet[key];
+					}
+				});
+
+				document.querySelectorAll('#obrushtanenaezik-id .obrushtanenaezik_link').forEach(link => {
+					link.classList.remove('obrushtanenaezik_link--active');
+					if (link.getAttribute('data-lang') === lang) {
+						link.classList.add('obrushtanenaezik_link--active');
+					}
+				});
+
+				localStorage.setItem('codewarsLang', lang);
+			}
+			
+			document.getElementById('obrushtanenaezik-id').addEventListener('click', (event) => {
+				const link = event.target.closest('.obrushtanenaezik_link');
+				if (link) {
+					event.preventDefault(); 
+					const newLang = link.getAttribute('data-lang');
+					setLanguage(newLang);
+				}
+			});
+			
+			const initialLang = localStorage.getItem('codewarsLang') || 'bg';
+			setLanguage(initialLang);
+		</script>
+	</body>
 </html>
