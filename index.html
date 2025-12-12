@@ -161,17 +161,17 @@
 			</div>
 			<div class="command-area">
 				<div class="panel">
-					<h3>ВИСОЧИНА</h3>
+					<h3 data-key="height">ВИСОЧИНА</h3>
 					<p>162 000 m</p>
 				</div>
 
 				<div class="panel">
-					<h3>GPS</h3>
-					<p style="color:#4fd1c5; font-weight:700;">Сигнал стабилен</p>
+					<h3 data-key="GPS">GPS</h3>
+					<p data-key="signal" style="color:#4fd1c5; font-weight:700;">Сигнал стабилен</p>
 				</div>
 
 				<div class="panel">
-					<h3>КООРДИНАТИ</h3>
+					<h3 data-key="coordinates">КООРДИНАТИ</h3>
 					<div class="coords">
 						X: -203.5<br>
 						Y: 638.2<br>
@@ -203,6 +203,9 @@
 					oxygen: "Oxygen",
 					lock: "Lock",
 					commands: "Commands",
+					height: "HEIGHT",
+					signal: "Stable Signal",
+					coordinates: "COORDINATES"
 				},
 				'bg': {
 					engine: "Двигател",
@@ -211,6 +214,9 @@
 					oxygen: "Кислород",
 					lock: "Заключване",
 					commands: "Команди",
+					height: "ВИСОЧИНА",
+					signal: "Сигнал стабилен",
+					coordinates: "КООРДИНАТИ"
 				}
 			};
 			function setLanguage(lang) {
