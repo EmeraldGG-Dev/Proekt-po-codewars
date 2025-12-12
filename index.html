@@ -129,6 +129,18 @@
 			.coords {
 				color:#cfe8ff
 			}
+			@media (max-width: 1024px) {
+				.dashboard {
+					grid-template-columns: repeat(2, 1fr);
+				}
+			}
+			@media (max-width: 600px) {
+				.dashboard {
+					grid-template-columns: 1fr;
+					padding: 15px;
+					gap: 15px;
+				}
+			}
 		</style>
 	</head>
 	<body>
