@@ -8,7 +8,12 @@
 			body {
 				margin: 0;
 				font-family: Arial, sans-serif;
-				background-color: #f0f0f0;
+				background: linear-gradient(180deg,#081021 0%, #071226 35%, #0b1626 100%);
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+				background-size: cover;
+				-webkit-font-smoothing:antialiased;
+				-moz-osx-font-smoothing:grayscale;
 			}
 			.GorenBar {
 				display: flex;
@@ -59,6 +64,66 @@
 			  vertical-align: -0.12em;
 			  display: inline-block;
 			}
+			button.active {
+				background-color: red;
+				color: white;
+			}
+			.panel {
+				background: rgba(0, 0, 0, 0.6);
+				padding: 20px;
+				border-radius: 12px;
+				width: 300px;
+				box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+			}
+			.dashboard {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 25px;
+				padding: 30px;
+			}
+			.cmd-btn {
+				width:100%;
+				max-width:340px;
+				padding:12px 18px;
+				border-radius:10px;
+				font-weight:700;
+				letter-spacing:.8px;
+				border:none;
+				cursor:pointer;
+				transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+				color:#fff;
+				box-shadow: 0 8px 20px rgba(2,8,18,0.6);
+				text-transform:uppercase;
+			}
+			.cmd-btn:hover {
+				transform: translateY(-3px);
+				box-shadow: 0 0 12px rgba(255,255,255,0.5);
+			}
+			.red    { background:#d62828; }
+			.blue   { background:#0077b6; }
+			.yellow { background:#fcbf49; color:black; }
+			.green  { background:#2a9d8f; }
+			.purple { background:#8338ec; }
+			.command-title {
+				color: white;
+				text-align: center;
+				margin-bottom: 20px;
+			}
+
+			.button-grid {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 14px;
+				justify-items: center;
+			}
+			.command-area {
+				background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.3));
+				padding:20px;
+				border-radius:12px;
+				box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+				border:1px solid rgba(255,255,255,0.03);
+				margin-bottom:26px;
+			}
 		</style>
 	</head>
 	<body>
@@ -71,19 +136,46 @@
 			</nav>
 		</header>
 		
+		<!--<main style="padding: 20px; color: #333">
+			<h1 data-key="topText">Управление</h1>
+			<button data-key="lightsText">Светлини</button>
+			<button data-key="lightsText">Отвори Входната Врата</button>
+			<button data-key="lightsText">Светлини</button>
+			<button data-key="lightsText">Двигател</button>
+		</main>-->
+		<div class="dashboard">
+			<div class="command-area">
+				<h1 class="command-title" style="color: white;">Команди</h1>
+				<div class="button-grid">
+					<button class="cmd-btn red">ДВИГАТЕЛ</button>
+					<button class="cmd-btn blue">ЗАЩИТА</button>
+					<button class="cmd-btn yellow">СВЕТЛИНИ</button>
+					<button class="cmd-btn purple">КИСЛОРОД</button>
+					<button class="cmd-btn green">ЗАКЛЮЧВАНЕ</button>
+				</div>
+			</div>
+		</div>
+		
 		<script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js"></script>
 		<script>
 			twemoji.parse(document.body, {
 			  folder: 'svg',
 			  ext: '.svg'
 			});
+
+			document.querySelectorAll("button").forEach(btn => {
+				btn.addEventListener("click", () => {
+					btn.classList.toggle("active");
+				});
+			});
+
 			//Prevodi
 			const translations = {
 				'en': {
-					//"test": "test"
+					topText: "Control Panel"
 				},
 				'bg': {
-					//"test": "тест"
+					topText: "Управление"
 				}
 			};
 			function setLanguage(lang) {
