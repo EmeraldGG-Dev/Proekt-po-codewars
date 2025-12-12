@@ -69,12 +69,15 @@
 				color: white;
 			}
 			.panel {
-				background: rgba(0, 0, 0, 0.6);
-				padding: 20px;
-				border-radius: 12px;
-				width: 300px;
-				box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+				background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.25));
+				border-radius:12px;
+				padding:18px;
+				min-height:80px;
+				box-shadow: 0 8px 30px rgba(2,8,18,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+				border: 1px solid rgba(255,255,255,0.03);
 			}
+			.panel h3 { margin:0 0 8px; font-size:.95rem; color:#cfe8ff; letter-spacing:.6px; }
+			.panel p { margin:0; color:#9fc9ff; font-weight:700; font-size:1.05rem; }
 			.dashboard {
 				display: grid;
 				grid-template-columns: repeat(3, 1fr);
@@ -123,6 +126,9 @@
 				border:1px solid rgba(255,255,255,0.03);
 				margin-bottom:26px;
 			}
+			.coords {
+				color:#cfe8ff
+			}
 		</style>
 	</head>
 	<body>
@@ -154,7 +160,24 @@
 				</div>
 			</div>
 			<div class="command-area">
-				
+				<div class="panel">
+					<h3>ВИСОЧИНА</h3>
+					<p>162 000 m</p>
+				</div>
+
+				<div class="panel">
+					<h3>GPS</h3>
+					<p style="color:#4fd1c5; font-weight:700;">Сигнал стабилен</p>
+				</div>
+
+				<div class="panel">
+					<h3>КООРДИНАТИ</h3>
+					<div class="coords">
+						X: -203.5<br>
+						Y: 638.2<br>
+						Z: 152.9
+					</div>
+				</div>
 			</div>
 		</div>
 		
