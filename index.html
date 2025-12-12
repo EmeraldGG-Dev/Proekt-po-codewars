@@ -173,9 +173,9 @@
 				<div class="panel">
 					<h3 data-key="coordinates">КООРДИНАТИ</h3>
 					<div class="coords">
-						X: -203.5<br>
-						Y: 638.2<br>
-						Z: 152.9
+						X: <span id="coord-x">-203.5</span><br>
+						Y: <span id="coord-y">638.2</span><br>
+						Z: <span id="coord-z">152.9</span>
 					</div>
 				</div>
 			</div>
@@ -209,6 +209,32 @@
 				});
 			});
 
+			function sluchainoMurdane(value, maxChange = 1) {
+				return (parseFloat(value) + (Math.random() * 2 - 1) * maxChange).toFixed(1);
+			}
+
+			function updateCoordinates() {
+				const xElem = document.getElementById('coord-x');
+				const yElem = document.getElementById('coord-y');
+				const zElem = document.getElementById('coord-z');
+
+				xElem.textContent = sluchainoMurdane(xElem.textContent);
+				yElem.textContent = sluchainoMurdane(yElem.textContent);
+				zElem.textContent = sluchainoMurdane(zElem.textContent);
+			}
+
+			setInterval(updateCoordinates, 500);
+
+			const logPanel = document.getElementById('log-panel');
+
+			function addLog(commandName) {
+				const timestamp = new Date().toLocaleTimeString();
+				const logEntry = document.createElement('div');
+				logEntry.textContent = `[${timestamp}] Command executed: ${commandName}`;
+				logPanel.appendChild(logEntry);
+				logPanel.scrollTop = logPanel.scrollHeight;
+			}
+			
 			//Prevodi
 			const translations = {
 				'en': {
@@ -270,16 +296,6 @@
 			
 			const initialLang = localStorage.getItem('codewarsLang') || 'bg';
 			setLanguage(initialLang);
-
-			const logPanel = document.getElementById('log-panel');
-
-			function addLog(commandName) {
-				const timestamp = new Date().toLocaleTimeString();
-				const logEntry = document.createElement('div');
-				logEntry.textContent = `[${timestamp}] Command executed: ${commandName}`;
-				logPanel.appendChild(logEntry);
-				logPanel.scrollTop = logPanel.scrollHeight;
-			}
 		</script>
 	</body>
 </html>
