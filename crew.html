@@ -191,11 +191,6 @@ body {
 		
 		<script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js"></script>
 		<script>
-			twemoji.parse(document.body, {
-			  folder: 'svg',
-			  ext: '.svg'
-			});
-
 			document.querySelectorAll("button").forEach(btn => {
 				btn.addEventListener("click", () => {
 					btn.classList.toggle("active");
