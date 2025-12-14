@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="bg">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Основни системи | Spaceship Control Panel</title>
+
+        <style>
+            body {
+                margin: 0;
+                font-family: Arial, sans-serif;
+                background: linear-gradient(180deg,#081021 0%, #071226 35%, #0b1626 100%);
+                color: #ecf0f1;
+            }
+
+            .GorenBar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: #051636;
+                padding: 10px 20px;
+                height: 50px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            }
+
+            .logotext_nagorniqbar {
+                font-size: 1.6em;
+                font-weight: bold;
+                color: #3498db;
+                text-decoration: none;
+            }
+
+            .page-switcher a {
+                margin-left: 10px;
+                color: #bdc3c7;
+                text-decoration: none;
+                font-weight: 600;
+                padding: 5px 10px;
+                border-radius: 4px;
+            }
+
+            .page-switcher a:hover,
+            .page-switcher a.active {
+                background-color: #3498db;
+                color: white;
+            }
+
+            .container {
+                max-width: 1100px;
+                margin: 40px auto;
+                padding: 0 20px;
+            }
+
+            h1 {
+                text-align: center;
+                margin-bottom: 40px;
+                color: #cfe8ff;
+            }
+
+            .systems-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 25px;
+            }
+
+            .system-card {
+                background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.35));
+                border-radius: 14px;
+                padding: 25px;
+                box-shadow: 0 10px 35px rgba(0,0,0,0.6);
+                border: 1px solid rgba(255,255,255,0.05);
+            }
+
+            .system-card h2 {
+                margin-top: 0;
+                color: #4cc9f0;
+            }
+
+            .system-card p {
+                color: #b8d9ff;
+                line-height: 1.6;
+            }
+
+            .system-card ul {
+                padding-left: 18px;
+                color: #9fc9ff;
+            }
+
+            .btn {
+                display: inline-block;
+                margin-top: 15px;
+                padding: 10px 16px;
+                border-radius: 8px;
+                border: none;
+                font-weight: 700;
+                cursor: pointer;
+                text-decoration: none;
+                color: white;
+            }
+
+            .btn.green {
+                background: #2a9d8f;
+            }
+
+            .btn.green:hover {
+                background: #3bb6a3;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="GorenBar">
+            <a href="index.html" class="logotext_nagorniqbar">Spaceship Control Panel</a>
+            <nav class="page-switcher">
+                <a href="index.html">Home</a>
+                <a href="systems.html" class="active">Системи</a>
+                <a href="status.html">Status</a>
+                <a href="crew.html">Екипаж</a>
+            </nav>
+        </header>
+        <div class="container">
+            <h1>Основни системи на кораба</h1>
+            <div class="systems-grid">
+
+                <div class="system-card">
+                    <h2>🚀 Навигация</h2>
+                    <p>
+                        Навигационната система отговаря за прецизния контрол на курса,
+                        позицията и скоростта на космическия кораб.
+                    </p>
+                    <ul>
+                        <li>GPS координати в реално време</li>
+                        <li>Автоматично коригиране на курса</li>
+                        <li>Контрол на орбиталната скорост</li>
+                    </ul>
+                    <a href="status.html" class="btn green">РАЗГЛЕДАЙ ПАНЕЛА</a>
+                </div>
+
+                <div class="system-card">
+                    <h2>📡 Комуникации</h2>
+                    <p>
+                        Осигурява постоянна връзка със Земята, станции и други кораби
+                        по време на мисията.
+                    </p>
+                    <ul>
+                        <li>Двупосочна комуникация</li>
+                        <li>Криптирани сигнали</li>
+                        <li>Аварийни канали</li>
+                    </ul>
+                    <a href="status.html" class="btn green">РАЗГЛЕДАЙ ПАНЕЛА</a>
+                </div>
+
+                <div class="system-card">
+                    <h2>🫁 Животоподдържане</h2>
+                    <p>
+                        Следи и контролира условията за живот на екипажа по време
+                        на цялата мисия.
+                    </p>
+                    <ul>
+                        <li>Нива на кислород</li>
+                        <li>Налягане и температура</li>
+                        <li>Филтрация на въздуха</li>
+                    </ul>
+                    <a href="status.html" class="btn green">РАЗГЛЕДАЙ ПАНЕЛА</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
