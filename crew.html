@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Екипаж – Control Panel</title>
+		<style>
+body {
+	margin: 0;
+	font-family: Arial, sans-serif;
+	background: linear-gradient(180deg,#081021 0%, #071226 35%, #0b1626 100%);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+}
+.GorenBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #051636;
+    padding: 10px 20px;
+    height: 55px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+.logotext_nagorniqbar {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #4cc9f0;
+}
+
+.right-bar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.page-switcher a {
+    text-decoration: none;
+    font-size: 0.85rem;
+    padding: 5px 10px;
+    color: #bdc3c7;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.page-switcher a.active,
+.page-switcher a:hover {
+    background: #3498db;
+    color: white;
+}
+
+.page-title {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.page-title h1 {
+    margin: 0;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.page-title p {
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+.crew-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+.crew-card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.3));
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    border: 1px solid rgba(255,255,255,0.04);
+}
+
+.crew-name {
+    font-size: 1.05rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 4px;
+}
+
+.crew-role {
+    font-size: 0.85rem;
+    color: #4cc9f0;
+    margin-bottom: 10px;
+    letter-spacing: 0.6px;
+}
+
+.crew-desc {
+    font-size: 0.85rem;
+    line-height: 1.5;
+	color: #bdc3c7;
+    opacity: 0.85;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .crew-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 500px) {
+    .crew-grid {
+        grid-template-columns: 1fr;
+    }
+}
+		</style>
+	</head>
+	<body>
+		<header class="GorenBar">
+		<div class="logotext_nagorniqbar">🚀 ORION CONTROL PANEL</div>
+
+		<div class="right-bar">
+			<nav class="page-switcher">
+				<a href="index.html">Home</a>
+				<a href="status.html">Status</a>
+				<a href="crew.html" class="active">Crew</a>
+			</nav>
+		</div>
+		</header>
+
+			<section class="page-title">
+				<h1>ЕКИПАЖ</h1>
+				<p>Оперативен състав на мисията ORION</p>
+			</section>
+
+			<section class="crew-grid">
+
+				<div class="crew-card">
+					<div class="crew-name">Иван Петров</div>
+					<div class="crew-role">Командир на мисията</div>
+					<div class="crew-desc">
+						Отговаря за всички стратегически решения и управлението на кораба по време на мисията.
+					</div>
+				</div>
+
+				<div class="crew-card">
+					<div class="crew-name">Мария Георгиева</div>
+					<div class="crew-role">Пилот</div>
+					<div class="crew-desc">
+						Управлява навигацията и маневрите на кораба при излитане, кацане и орбитални операции.
+					</div>
+				</div>
+
+				<div class="crew-card">
+					<div class="crew-name">Александър Иванов</div>
+					<div class="crew-role">Инженер</div>
+					<div class="crew-desc">
+						Поддържа техническите системи и следи за изправността на двигателите и захранването.
+					</div>
+				</div>
+
+				<div class="crew-card">
+					<div class="crew-name">Елена Димитрова</div>
+					<div class="crew-role">Специалист животоподдържащи системи</div>
+					<div class="crew-desc">
+						Следи нивата на кислород, налягане и температура в кораба.
+					</div>
+				</div>
+
+				<div class="crew-card">
+					<div class="crew-name">Николай Стоянов</div>
+					<div class="crew-role">Комуникационен офицер</div>
+					<div class="crew-desc">
+						Отговаря за връзката със Земята и вътрешните комуникационни системи.
+					</div>
+				</div>
+
+				<div class="crew-card">
+					<div class="crew-name">Анна Христова</div>
+					<div class="crew-role">Научен специалист</div>
+					<div class="crew-desc">
+						Провежда научни експерименти и анализира данни от мисията.
+					</div>
+				</div>
+
+		</section>
+		
+		<script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js"></script>
+		<script>
+			twemoji.parse(document.body, {
+			  folder: 'svg',
+			  ext: '.svg'
+			});
+
+			document.querySelectorAll("button").forEach(btn => {
+				btn.addEventListener("click", () => {
+					btn.classList.toggle("active");
+					addLog(btn.textContent.trim());
+				});
+			});
+
+			function sluchainoMurdane(value, maxChange = 1) {
+				return (parseFloat(value) + (Math.random() * 2 - 1) * maxChange).toFixed(1);
+			}
+
+			function updateCoordinates() {
+				const xElem = document.getElementById('coord-x');
+				const yElem = document.getElementById('coord-y');
+				const zElem = document.getElementById('coord-z');
+
+				xElem.textContent = sluchainoMurdane(xElem.textContent);
+				yElem.textContent = sluchainoMurdane(yElem.textContent);
+				zElem.textContent = sluchainoMurdane(zElem.textContent);
+			}
+
+			setInterval(updateCoordinates, 500);
+
+			const logPanel = document.getElementById('log-panel');
+
+			function addLog(commandName) {
+				const timestamp = new Date().toLocaleTimeString();
+				const logEntry = document.createElement('div');
+				logEntry.textContent = `[${timestamp}] Command executed: ${commandName}`;
+				logPanel.appendChild(logEntry);
+				logPanel.scrollTop = logPanel.scrollHeight;
+			}
+			
+			//Prevodi
+			const translations = {
+				'en': {
+					engine: "Engine",
+					protection: "Protection",
+					lights: "Lights",
+					oxygen: "Oxygen",
+					lock: "Lock",
+					commands: "Commands",
+					height: "HEIGHT",
+					signal: "Stable Signal",
+					coordinates: "COORDINATES",
+                    status: "STATUS"
+				},
+				'bg': {
+					engine: "Двигател",
+					protection: "Защита",
+					lights: "Светлини",
+					oxygen: "Кислород",
+					lock: "Заключване",
+					commands: "Команди",
+					height: "ВИСОЧИНА",
+					signal: "Сигнал стабилен",
+					coordinates: "КООРДИНАТИ",
+                    status: "СТАТУС"
+				}
+			};
+			function setLanguage(lang) {
+				const translationSet = translations[lang];
+
+				if (!translationSet) {
+					console.error(`No translations found for language: ${lang}`);
+					return;
+				}
+
+				document.querySelectorAll('[data-key]').forEach(element => {
+					const key = element.getAttribute('data-key');
+					if (translationSet[key]) {
+						element.textContent = translationSet[key];
+					}
+				});
+
+				document.querySelectorAll('#obrushtanenaezik-id .obrushtanenaezik_link').forEach(link => {
+					link.classList.remove('obrushtanenaezik_link--active');
+					if (link.getAttribute('data-lang') === lang) {
+						link.classList.add('obrushtanenaezik_link--active');
+					}
+				});
+
+				localStorage.setItem('codewarsLang', lang);
+			}
+			
+			document.getElementById('obrushtanenaezik-id').addEventListener('click', (event) => {
+				const link = event.target.closest('.obrushtanenaezik_link');
+				if (link) {
+					event.preventDefault(); 
+					const newLang = link.getAttribute('data-lang');
+					setLanguage(newLang);
+				}
+			});
+			
+			const initialLang = localStorage.getItem('codewarsLang') || 'bg';
+			setLanguage(initialLang);
+		</script>
+	</body>
+</html>
