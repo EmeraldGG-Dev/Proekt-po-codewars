@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="bg">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Член на екипажа – ORION</title>
+
+        <style>
+            body {
+                margin: 0;
+                font-family: Arial, sans-serif;
+                background: linear-gradient(180deg,#081021 0%, #071226 35%, #0b1626 100%);
+                color: #cfe8ff;
+            }
+
+            .GorenBar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: #051636;
+                padding: 10px 20px;
+                height: 55px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+            }
+
+            .logotext_nagorniqbar {
+                font-size: 1.4rem;
+                font-weight: bold;
+                color: #4cc9f0;
+            }
+
+            .page-switcher a {
+                text-decoration: none;
+                font-size: 0.85rem;
+                padding: 5px 10px;
+                color: #bdc3c7;
+                border-radius: 4px;
+                font-weight: 600;
+            }
+
+            .page-switcher a:hover {
+                background: #3498db;
+                color: white;
+            }
+
+            .profile-wrapper {
+                display: flex;
+                justify-content: center;
+                margin-top: 60px;
+            }
+
+            .profile-card {
+                background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.35));
+                border-radius: 16px;
+                padding: 30px;
+                width: 340px;
+                text-align: center;
+                box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+                border: 1px solid rgba(255,255,255,0.04);
+            }
+
+            .profile-card img {
+                width: 180px;
+                height: 180px;
+                object-fit: cover;
+                border-radius: 50%;
+                border: 3px solid #4cc9f0;
+                margin-bottom: 18px;
+            }
+
+            .profile-name {
+                font-size: 1.4rem;
+                font-weight: bold;
+                color: #ffffff;
+                margin-bottom: 8px;
+            }
+
+            .profile-role {
+                font-size: 0.9rem;
+                color: #4cc9f0;
+                letter-spacing: 0.6px;
+                margin-bottom: 15px;
+            }
+
+            /* RESPONSIVE */
+            @media (max-width: 400px) {
+                .profile-card {
+                    width: 90%;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <header class="GorenBar">
+            <div class="logotext_nagorniqbar">🚀 ORION CONTROL PANEL</div>
+
+            <nav class="page-switcher">
+                <a href="index.html">Home</a>
+                <a href="crew.html">Crew</a>
+            </nav>
+        </header>
+
+        <section class="profile-wrapper">
+            <div class="profile-card">
+
+                <!-- СНИМКА -->
+                <img src="crew2.jpg" alt="Crew Member">
+
+                <div class="profile-name">Александър Иванов</div>
+
+                <div class="profile-role">Инженер</div>
+
+            </div>
+        </section>
+
+    </body>
+</html>
